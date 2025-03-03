@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgb(186, 229, 229);
+    color: whitesmoke;
+    font-size: 1.2rem;
+}
+
+header ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 5px;
+}
+
+section {
+    background-color: silver;
+    color: whitesmoke;
+    border: 2px solid black;
+    padding: 5px;
+}
+
+main {
+    padding: 5px;
+}
+
+footer {
+    background-color: rgb(29, 29, 54);
+    color: wheat;
+    text-align: center;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: wheat;
+}

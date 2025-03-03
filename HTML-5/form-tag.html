@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <table border="5" align="center" cellpadding="5" cellspacing="5">
+            <tr>
+                <td> First Name:</td>
+                <td>
+                    <input type="text" name="first name" placeholder="Enter your name here..." required
+                        title="Enter your first name only use latters...!" pattern="[A-Za-z]{0,7}" />
+                </td>
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td><input type="text" name="last name" placeholder="Enter your last name here..."
+                        pattern="[A-Za-z]{0,8}" required title="Enter your last name only use latters...!"></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td><input type="radio" name="123">Male
+                    <input type="radio" name="123">Female
+                </td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" placeholder="abc@gamil.com" title="abc@gamil.com" required></td>
+            </tr>
+            <tr>
+                <td>Quantity:</td>
+                <td><input type="number" placeholder="1" min="1" max="10" title="Enter Quantity number..."></td>
+            </tr>
+            <tr>
+                <td>Languages:</td>
+                <td><input type="checkbox">Hindi
+                    <input type="checkbox" checked>English
+                    <input type="checkbox">Gujarati
+                    <input type="checkbox">Marathi
+                </td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" maxlength="10"></td>
+            </tr>
+            <tr>
+                <td>Mobile:</td>
+                <td><input type="text" pattern="[0-9]{10}" value="" title="10 digits only..." required></td>
+            </tr>
+            <tr>
+                <td>Location:</td>
+                <td>
+                    <select>
+                        <option value="" hidden>--- Select Country ---</option>
+                        <option value="">India</option>
+                        <option value="">USA</option>
+                        <option value="">UAE</option>
+                    </select>
+                    <select name="">
+                        <option value="" hidden>--- Select State ---</option>
+                    </select>
+                    <select name="">
+                        <option value="" hidden>--- select City ---</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><textarea placeholder="Enter your adddress...." cols="50" rows="5"></textarea></td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="submit"></td>
+            </tr>
+
+
+        </table>
+
+    </form>
+</body>
+
+</html>

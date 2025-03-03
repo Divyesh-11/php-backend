@@ -1,0 +1,180 @@
+DBMS : Database Management System
+
+Database: collection of data 
+
+Manage Data : SQL (Structured Query Language)
+
+1. DDL (Data Definition Language)
+=> Create 
+
+-> create database DBName	
+
+-> CREATE TABLE tableName
+
+(
+    columnName type(size) primary key auto_increment,
+    columnName type(size),
+    columnName type(size),
+)
+=> Alter 
+
+-> alter table tableName add  ColName type(size)
+-> alter table tableName add  ColName type(size) after colName
+-> alter table tableName CHANGE oldColName NewColName type(size);
+-> ALTER TABLE tableName ADD colName type(size) FIRST => to add col at the begining of a table
+-> ALTER table tableName Rename NewTableName 
+-> ALTER TABLE tableName drop colName
+-> ALTER TABLE tableName CHANGE oldColName NewColName type(size) NULL AUTO_INCREMENT, add PRIMARY KEY ('jeCol ne PrimaryKey apvi HOy te');
+
+
+=> Drop
+
+-> drop table tableName ( deletes the whole table with records)
+=> Truncate
+-> truncate table tableName ( deletes only the records NOT THE TABLE)
+
+2. DML (Data Manipulation Language)
+=> insert
+insert into tableName(col1,tableName.col2,tableName.col3)
+values('val1',val2,'val3');
+
+=> update
+
+=> update tableName set colName= value ==> update all colname with that value
+
+=> update products set prd_price=5 where prd_id=4
+
+=> update tableName set colName= value,colname=val where col= val
+
+=> update products set prd_price=5,prd_desc="somethingElse" where prd_id=4
+
+=> delete
+
+-> delete from tableNAme ==> same AS TRUNCATE (Deletes all records)
+
+-> delete from tableName where col=val
+
+
+=> Constraints:
+
+1. Primary Key 
+-> to indentify records uniquely
+-> there must be only one primary key per table
+-> can not accept null value
+
+Ex. rollNo
+
+colName type(size) primary key auto_increment;
+
+2. Unique Key 
+-> to indentify records uniquely
+-> there can be more than one unique key per table
+-> unique key can accept null value
+
+Ex. email,mobile
+
+3. Foreign Key
+-> to make relations between 2 or moree tables
+-> there can be more than one foreign key per table
+
+-> table1 (category)
+cate_id(pk) cate_name cate_img
+
+-> table 2 (subcategory)
+subcate_id(pk) subcate_name subcate_img c_id(fk)
+
+
+foreign key (c_id) references table1(cate_id)
+
+
+
+3. DQL (Data Query Language)
+=> select (to retrieve/fetch data)
+
+SELECT * FROM `products`
+SELECT * FROM `products` WHERE prd_id=1;
+SELECT prd_name FROM `products` WHERE prd_id=1;
+SELECT prd_price FROM `products` WHERE prd_id=1;
+SELECT prd_name,prd_price FROM `products` WHERE prd_id=1;
+SELECT * FROM `products` WHERE prd_price < 1500
+SELECT * FROM `products` WHERE prd_price <= 1500
+SELECT * FROM `products` WHERE prd_price > 1500
+SELECT * FROM `products` WHERE prd_price >= 1500
+SELECT * FROM `products` WHERE prd_price = 1500
+
+SELECT count(prd_price) FROM `products` WHERE 1;
+SELECT avg(prd_price) FROM `products` WHERE 1;
+SELECT sum(prd_price) FROM `products` WHERE 1;
+SELECT max(prd_price) FROM `products` WHERE 1;
+SELECT min(prd_price) FROM `products` WHERE 1;
+
+select col1,col2,col3 from table1
+join table2 on table2.col(fk) = table1.col(pk)
+join table 3 on table3.col(fk) = table1.col(pk)
+
+Joins
+1. inner JOIN (join)
+2. left JOIN (join)
+3. right JOIN (join)
+4. full outer JOIN (join)
+
+
+Stored Procedure:
+1.Simple 
+
+DELIMITER $$
+create procedure ProcedureName()
+begin
+	
+	any query
+
+end
+
+call ProcedureName();
+
+
+2. Parameterized 
+
+DELIMITER $$
+create procedure ProcedureName(para1 type(sizE),para2 type(size))
+begin
+	
+	any query
+
+end
+
+call ProcedureName(val1,val2);
+
+Triggers:
+
+DELIMITER $$
+CREATE TRIGGER triggerName after/before event(insert) on TableName for EACH ROW 
+BEGIN
+	insert into triggertable (id,name,action_performed)
+    values(new.id,new.name,'inserted..!');
+END
+
+
+DELIMITER $$
+CREATE TRIGGER updateTrigger after/before update on TableName for EACH ROW 
+BEGIN
+	insert into triggertable (id,name,action_performed)
+    values(new.id,new.name,'updated..!');
+END
+
+
+
+CREATE TRIGGER deleteTrigger after/before delete on TableName for EACH ROW 
+BEGIN
+	insert into triggertable (id,name,action_performed)
+	values(old.id,old.name,'deleted..!');
+END
+
+
+4. DCL (Data Control Language)
+=> Grant, Revoke
+
+
+5. TCL (Transaction Control Language)
+=> Rollback,Commit,Savepoint
+

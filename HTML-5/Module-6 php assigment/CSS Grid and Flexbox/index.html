@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Cards using Flexbox</title>
+</head>
+
+<style>
+    .containar-fluid {
+        align-items: center;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        align-content: center;
+    }
+
+    .col {
+        align-self: center;
+        margin: 10px;
+        padding: 10px;
+        height: 320px;
+        align-content: center;
+
+    }
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    p {
+        text-align: center;
+        padding: 5px;
+    }
+
+    @media screen and (max-width: 1200px) {
+        .row {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+
+        .col {
+            align-self: center;
+            margin: 10px;
+            padding: 10px;
+            height: 320px;
+            align-content: center;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .row {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+
+        .col {
+            /* border: 2px solid brown; */
+            align-self: center;
+            margin: 10px;
+            padding: 10px;
+            height: 320px;
+            align-content: center;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    }
+</style>
+
+<body>
+    <div class="containar-fluid">
+        <div class="row">
+            <div class="col">
+                <img src="box1_image.jpg" alt="image not found" width="200px">
+                <p>Price : 350</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae quisquam quod mollitia quas,
+                    explicabo incidunt eligendi commodi harum sit cupiditate eum.</p>
+            </div>
+
+            <div class="col">
+                <img src="box2_image.jpg" alt="image not found" width="200px">
+                <p>Price : 350</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae quisquam quod mollitia quas,
+                    explicabo incidunt eligendi commodi harum sit cupiditate eum.</p>
+            </div>
+
+            <div class="col">
+                <img src="box3_image.jpg" alt="image not found" width="200px">
+                <p>Price : 350</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae quisquam quod mollitia quas,
+                    explicabo incidunt eligendi commodi harum sit cupiditate eum.</p>
+            </div>
+
+            <div class="col">
+                <img src="box4_image.jpg" alt="image not found" width="200px">
+                <p>Price : 350</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae quisquam quod mollitia quas,
+                    explicabo incidunt eligendi commodi harum sit cupiditate eum.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <img src="box1_image.jpg" alt="image not found" width="200px">
+                <p>Price : 350</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae quisquam quod mollitia quas,
+                    explicabo incidunt eligendi commodi harum sit cupiditate eum.</p>
+            </div>
+
+            <div class="col">
+                <img src="box2_image.jpg" alt="image not found" width="200px">
+                <p>Price : 350</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae quisquam quod mollitia quas,
+                    explicabo incidunt eligendi commodi harum sit cupiditate eum.</p>
+            </div>
+
+            <div class="col">
+                <img src="box3_image.jpg" alt="image not found" width="200px">
+                <p>Price : 350</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae quisquam quod mollitia quas,
+                    explicabo incidunt eligendi commodi harum sit cupiditate eum.</p>
+            </div>
+
+            <div class="col">
+                <img src="box4_image.jpg" alt="image not found" width="200px">
+                <p>Price : 350</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae quisquam quod mollitia quas,
+                    explicabo incidunt eligendi commodi harum sit cupiditate eum.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <img src="box1_image.jpg" alt="image not found" width="200px">
+                <p>Price : 350</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae quisquam quod mollitia quas,
+                    explicabo incidunt eligendi commodi harum sit cupiditate eum.</p>
+            </div>
+
+            <div class="col">
+                <img src="box2_image.jpg" alt="image not found" width="200px">
+                <p>Price : 350</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae quisquam quod mollitia quas,
+                    explicabo incidunt eligendi commodi harum sit cupiditate eum.</p>
+            </div>
+
+            <div class="col">
+                <img src="box3_image.jpg" alt="image not found" width="200px">
+                <p>Price : 350</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae quisquam quod mollitia quas,
+                    explicabo incidunt eligendi commodi harum sit cupiditate eum.</p>
+            </div>
+
+            <div class="col">
+                <img src="box4_image.jpg" alt="image not found" width="200px">
+                <p>Price : 350</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae quisquam quod mollitia quas,
+                    explicabo incidunt eligendi commodi harum sit cupiditate eum.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
