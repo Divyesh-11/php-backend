@@ -1,4 +1,14 @@
-<?php include "connection.php"; ?>
+<?php include "connection.php";
+
+$id = $_GET['id'];
+
+$sql = "SELECT * FROM `employee` WHERE id = '$id'";
+
+$run = $conn->query($sql);
+
+$fetch = $run->fetch_object();
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -96,67 +106,48 @@
     </div>
 
     <form method="post">
+
+    <div>
+            <label>EMPID</label>
+            <input type="text" readonly name="fname" value="<?php echo $fetch->id ?>">
+        </div>
+
         <div>
             <label>First Name</label>
-            <input type="text" name="fname" required>
+            <input type="text" name="fname" value="<?php echo $fetch->fname ?>">
         </div>
 
         <div>
             <label>Last Name</label>
-            <input type="text" name="lname" required>
+            <input type="text" name="lname" value="<?php echo $fetch->lname ?>">
         </div>
 
         <div>
             <label>Email</label>
-            <input type="email" name="email" required>
+            <input type="email" name="email" value="<?php echo $fetch->email ?>">
         </div>
 
         <div>
             <label>Mobile</label>
-            <input type="text" name="phone" required>
+            <input type="text" name="phone" value="<?php echo $fetch->mobile ?>">
         </div>
 
         <div>
-            <label>Address</label>
-            <textarea name="address" required></textarea>
-        </div>
-
-        <div>
-            <label>Gender</label>
-            <input type="radio" name="gender" value="male" required> Male
-            <input type="radio" name="gender" value="female"> Female
-        </div>
-
-        <div>
-            <label>Password</label>
-            <input type="password" name="pass" required>
-        </div>
-
-        <div>
-            <label>Confirm Password</label>
-            <input type="password" name="cpass" required>
-        </div>
-
-        <div>
-            <input type="submit" name="insert" value="Submit">
+            <input type="submit" name="updatebtn" value="Update">
         </div>
     </form>
 
     <?php
-    if (isset($_POST['insert'])) {
+    if (isset($_POST['updatebtn'])) {
         $fname = $_POST['fname'];
         $lname = $_POST['lname'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
-        $address = $_POST['address'];
-        $gender = $_POST['gender'];
-        $pass = $_POST['pass'];
-        $confirmpass = $_POST['cpass'];
 
         if ($pass !== $confirmpass) {
             echo "<p class='error'>Passwords do not match!</p>";
         } else {
-            $sql = "INSERT INTO employee (fname,lname,email,mobile,address,gender,password) VALUES ('$fname','$lname','$email','$phone','$address','$gender','$pass')";
+            $sql = "UPDATE employee SET fname='$fname',lname='$lname',email='$email',mobile='$phone' WHERE id = '$id'";
 
             $run = $conn->query($sql);
 
